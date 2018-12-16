@@ -24,7 +24,6 @@ for items in roadreports:
         condition = (items["Condition"])
         roadname = (items["RoadwayName"])
         vis = (items["Visibility"])
-        poly = (items["EncodedPolyline"])
         if (area == "Eastern" and roadname == "417" or roadname == "138" or roadname == "416"):
             if ("Quebec" in location or "Arnprior" in location): continue
             print("Highway %s %s . %s . visibility is %s .." % (roadname,location,condition[0],vis))
