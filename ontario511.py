@@ -27,9 +27,8 @@ for items in roadreports:
         poly = (items["EncodedPolyline"])
         if (area == "Eastern" and roadname == "417" or roadname == "138" or roadname == "416"):
             if ("Quebec" in location or "Arnprior" in location): continue
-            print("Highway",roadname,location,".",condition[0],".","visibility is",vis,"..")
-
-
+            print("Highway %s %s . %s . visibility is %s .." % (roadname,location,condition[0],vis))
+        
 #####################################################################################################
 # output
 # Highway 138 From Cornwall to Highway 417 . Bare and dry road . visibility is Good ..
