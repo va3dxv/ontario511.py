@@ -32,10 +32,10 @@ for items in roadreports:
 
 #####################################################################################################
 # output
-# Highway 138 From Cornwall to Highway 417 .. Bare and dry road .. visibility is Good
-# Highway 416 From Highway 401 to Fallowfield Road .. Bare and dry road .. visibility is Good
-# Highway 417 From Highway 138 to Gloucester .. Bare and dry road .. visibility is Good
-# Highway 417 From Gloucester to Fitzroy .. Bare and dry road .. visibility is Good
-# Highway 416 From Fallowfield Road to Highway 417 .. Bare and dry road .. visibility is Good
+# Highway 138 From Cornwall to Highway 417 . Bare and dry road . visibility is Good ..
+# Highway 416 From Highway 401 to Fallowfield Road . Bare and dry road . visibility is Good ..
+# Highway 417 From Highway 138 to Gloucester . Bare and dry road . visibility is Good ..
+# Highway 417 From Gloucester to Fitzroy . Bare and dry road . visibility is Good ..
+# Highway 416 From Fallowfield Road to Highway 417 . Bare and dry road . visibility is Good ..
 #
 #EOF
