@@ -26,7 +26,6 @@ roadreports = requests.get (
         "https://511on.ca/api/v2/get/roadconditions"
 ).json()
 
-
 file=open("/tmp/ontario511.txt","+w")
 
 file.write("Current highway conditions..\r\n")
@@ -44,8 +43,8 @@ file.close()
 
 subprocess.call(shlex.split("/usr/local/sbin/tts_audio.sh /tmp/ontario511.txt"))
 subprocess.call(shlex.split("rm -f /tmp/ontario511.txt"))
+subprocess.call(shlex.split("rm -f /etc/asterisk/custom/ontario511.ul"))
 subprocess.call(shlex.split("mv /tmp/ontario511.ul /etc/asterisk/custom"))
-
 
 #####################################################################################################
 #
