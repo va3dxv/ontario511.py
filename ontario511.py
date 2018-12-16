@@ -8,6 +8,15 @@
 #
 # va3dxv@gmail.com
 #
+# This script requires tts_audio.sh and API access to voicerss.org
+# calls tts_audio.sh to create .ul file for asterisk
+#
+# Run this file from root crontab to create the audio file every 4 hours
+# 0 */4 * * * /usr/local/sbin/ontario511.py >/dev/null 2>&1
+#
+# add to /etc/asterisk/rpt.conf under [functions]
+# 85=cmd,asterisk -rx "rpt localplay 47960 /etc/asterisk/custom/ontario511"
+#
 #####################################################################################################
 import requests
 import subprocess
