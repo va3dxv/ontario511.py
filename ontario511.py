@@ -35,8 +35,8 @@ for items in roadreports:
         condition = (items["Condition"])
         roadname = (items["RoadwayName"])
         vis = (items["Visibility"])
-        if (area == "Eastern" and roadname == "417" or roadname == "138" or roadname == "416"):
-            if ("Quebec" in location or "Arnprior" in location): continue
+        if (area == "Eastern" and roadname == "401" or roadname == "417" or roadname == "138" or roadname == "416"):
+            if ("Quebec" in location and roadname == "417" or "Maitland" in location or "Quinte" in location or "Lansdowne" in location or "Arnprior" in location): continue
             file.write("..Highway %s %s. %s. Visibility is %s. \r\n" % (roadname,location,condition[0],vis))
 file.write("End of report.\r\n")
 file.close()
@@ -48,7 +48,7 @@ subprocess.call(shlex.split("mv /tmp/ontario511.ul /etc/asterisk/custom"))
 
 #####################################################################################################
 #
-# output:
+# output sample (depends on if statement):
 #
 # Current highway conditions..
 # Highway 138 From Cornwall to Highway 417 . Bare and dry road . visibility is Good ..
