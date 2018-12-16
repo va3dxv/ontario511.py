@@ -26,7 +26,7 @@ for items in roadreports:
         vis = (items["Visibility"])
         if (area == "Eastern" and roadname == "417" or roadname == "138" or roadname == "416"):
             if ("Quebec" in location or "Arnprior" in location): continue
-            print("Highway %s %s . %s . visibility is %s .." % (roadname,location,condition[0],vis))
+            print(.. "Highway %s %s . %s . visibility is %s .." % (roadname,location,condition[0],vis))
         
 #####################################################################################################
 # output
