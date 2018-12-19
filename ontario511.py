@@ -1,4 +1,4 @@
-#!/usr/bin/python3.5
+#!/usr/bin/python
 #
 # ontario511.py
 #
@@ -26,7 +26,7 @@ roadreports = requests.get (
         "https://511on.ca/api/v2/get/roadconditions"
 ).json()
 
-file=open("/tmp/ontario511.txt","+w")
+file=open("/tmp/ontario511.txt","w")
 
 file.write("Current highway conditions..\r\n")
 for items in roadreports:
