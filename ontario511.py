@@ -30,7 +30,7 @@ import os
 # configuration
 #
 # set your voicerss API key here
-voicersskey = "someapikeygoeshere"
+voicersskey = "yourvoicerssapikeygoeshere"
 # set your desired voice language here
 voicersslang = "en-us"
 # set speed of speech here
@@ -40,10 +40,19 @@ voicerssformat = "44khz_16bit_mono"
 #
 # end configuration
 #
+temppath = "/tmp/"
+aslpath = "/etc/asterisk/custom/"
+scriptname = "ontario511"
+aslfile = aslpath + "ontario511"
+filetxt = temppath + scriptname + ".txt"
+filemp3 = temppath + scriptname + ".mp3"
+filewav = temppath + scriptname + ".wav"
+fileul = aslfile + ".ul"
+
 roadreports = requests.get(
     "https://511on.ca/api/v2/get/roadconditions"
 ).json()
-textfile = open("/tmp/ontario511.txt", "w")
+textfile = open(filetxt, "w")
 textfile.write("Current highway conditions..\r\n")
 for items in roadreports:
     area = (items["AreaName"])
@@ -59,22 +68,22 @@ for items in roadreports:
                        (roadname, location, condition[0], vis))
 textfile.write("End of report.")
 textfile.close()
-ontario511 = open("/tmp/ontario511.txt", "r")
+ontario511 = open(filetxt, "r")
 getmp3 = requests.get("http://api.voicerss.org/",
                       data={"key": voicersskey, "r": voicerssspeed,
                             "src": ontario511, "hl": voicersslang, "f": voicerssformat}
                       )
 ontario511.close()
-mp3file = open("/tmp/ontario511.mp3", "wb")
+mp3file = open(filemp3, "wb")
 mp3file.write(getmp3.content)
 mp3file.close()
 # convert to wav with lame (apt-get install lame) then to ulaw with sox (apt-get install sox)
-subprocess.call(shlex.split("lame --decode /tmp/ontario511.mp3 /tmp/ontario511.wav"))
-subprocess.call(shlex.split("sox -V /tmp/ontario511.wav -r 8000 -c 1 -t ul /etc/asterisk/custom/ontario511.ul"))
+subprocess.call(shlex.split("lame --decode " + filemp3 + " " + filewav))
+subprocess.call(shlex.split("sox -V " + filewav + " -r 8000 -c 1 -t ul " + fileul))
 # cleanup
-subprocess.call(shlex.split("rm -f /tmp/ontario511.txt"))
-subprocess.call(shlex.split("rm -f /tmp/ontario511.mp3"))
-subprocess.call(shlex.split("rm -f /tmp/ontario511.wav"))
+subprocess.call(shlex.split("rm -f " + filetxt))
+subprocess.call(shlex.split("rm -f " + filemp3))
+subprocess.call(shlex.split("rm -f " + filewav))
 #################################
 # output sample (depends on if statement):
 #
