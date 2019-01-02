@@ -22,6 +22,10 @@
 # (where 99999 is your node number)
 #
 #################################
+import requests
+import subprocess
+import shlex
+import os
 #
 # configuration
 #
@@ -36,10 +40,6 @@ voicerssformat = "44khz_16bit_mono"
 #
 # end configuration
 #
-import requests
-import subprocess
-import shlex
-import os
 roadreports = requests.get(
     "https://511on.ca/api/v2/get/roadconditions"
 ).json()
