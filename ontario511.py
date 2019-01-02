@@ -29,7 +29,7 @@ import shlex
 # configuration
 #
 # set your voicerss API key here
-voicersskey = "9d35658da86c43a6b3335136a82b4f6a"
+voicersskey = "yourvoicerssapikeygoeshere"
 # set your desired voice language here
 voicersslang = "en-us"
 # set speed of speech here
