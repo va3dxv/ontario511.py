@@ -110,10 +110,9 @@ def make_ulaw():
 def clean_temp():
     print("Removing temporary text/mp3 files.")
 
-
-subprocess.call(shlex.split("rm -f " + filetxt))
-subprocess.call(shlex.split("rm -f " + filemp3))
-subprocess.call(shlex.split("rm -f " + filewav))
+    subprocess.call(shlex.split("rm -f " + filetxt))
+    subprocess.call(shlex.split("rm -f " + filemp3))
+    subprocess.call(shlex.split("rm -f " + filewav))
 
 
 try:
