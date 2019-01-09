@@ -52,8 +52,8 @@ voicerssformat = "44khz_16bit_mono"
 #
 # end configuration
 #
-temppath = ""
-aslpath = ""
+temppath = "/tmp/"
+aslpath = "/etc/asterisk/custom/"
 scriptname = "ontario511"
 aslfile = aslpath + "ontario511"
 filetxt = temppath + scriptname + ".txt"
