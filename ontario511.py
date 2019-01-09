@@ -107,10 +107,9 @@ def make_ulaw():
                                 " -r 8000 -c 1 -t ul " + fileul))
 
 
-def clean_temp()
+def clean_temp():
+    print("Removing temporary files.")
 
-
-print("Removing temporary files.")
 
 subprocess.call(shlex.split("rm -f " + filetxt))
 subprocess.call(shlex.split("rm -f " + filemp3))
